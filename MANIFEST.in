@@ -1,0 +1,18 @@
+include *.txt
+include *.md
+include *.pkl
+recursive-include ./heart_disease_model *
+
+include heart_disease_model/datasets/heart.csv
+include heart_disease_model/datasets/test.csv
+include heart_disease_model/trained_models/*.pkl
+include heart_disease_model/VERSION
+include heart_disease_model/config.yml
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

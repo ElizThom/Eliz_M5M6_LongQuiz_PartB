@@ -1,0 +1,11 @@
+joblib
+numpy
+pandas
+pydantic
+ruamel.yaml
+scikit-learn
+strictyaml
+tensorflow
+keras
+tensorflow
+scikit-learn
