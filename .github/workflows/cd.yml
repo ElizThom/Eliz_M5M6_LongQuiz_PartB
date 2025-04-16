@@ -15,13 +15,13 @@ jobs:
       - name: Pull Docker Image
         env: 
           DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-        run: sudo docker pull $DOCKER_USER/heart-disease-fastapi:latest
+        run: sudo docker pull $DOCKER_USER/heart_disease-fastapi:latest
     
       - name: Delete Old Docker Container
-        run: sudo docker rm -f heart-disease-fastapi-container || true
+        run: sudo docker rm -f heart_disease-fastapi-container || true
     
       - name: Run Docker Container
         env: 
           DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-        run: sudo docker run -it -d -p 8001:8001 --name heart-disease-fastapi-container $DOCKER_USER/heart-disease-fastapi:latest
+        run: sudo docker run -it -d -p 8001:8001 --name heart_disease-fastapi-container $DOCKER_USER/heart_disease-fastapi:latest
 
