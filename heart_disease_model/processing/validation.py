@@ -17,7 +17,7 @@ from heart_disease_model.processing.data_manager import remove_thal_1_2
 
 def validate_inputs(*, input_df: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[dict]]:
     """Check model inputs for unprocessable values."""
-    if input_df['thal'] == '1' or input_df['thal'] == '2':
+    if ((input_df["thal"] == "1") | (input_df["thal"] == "2")).any():
         pre_processed = remove_thal_1_2(data_frame=input_df)
     else:
         pre_processed = input_df.copy()
