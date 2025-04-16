@@ -15,10 +15,13 @@ jobs:
       - name: Check Disk Space
         run: df -h
 
+      - name: Verify Docker Daemon
+        run: sudo docker info
+
       - name: Clean Up Docker Resources
         run: |
-          docker system prune -af
-          docker volume prune -f
+          sudo docker system prune -af
+          sudo docker volume prune -f
 
       - name: Pull Docker Image
         env: 
